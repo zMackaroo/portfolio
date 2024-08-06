@@ -1,10 +1,5 @@
 import { lazy } from 'react';
 import Work1 from '../Assets/Images/work-1.svg';
-import Work2 from '../Assets/Images/work-2.svg';
-import Work3 from '../Assets/Images/work-3.svg';
-import Work4 from '../Assets/Images/work-4.svg';
-import Work5 from '../Assets/Images/work-5.svg';
-import Work6 from '../Assets/Images/work-6.svg';
 import Image1 from '../Assets/Images/avatar-1.svg';
 import Image2 from '../Assets/Images/avatar-3.svg';
 
