@@ -12,6 +12,11 @@
   z-index: 11;
 }
 
+a {
+  position: relative;
+  display: inline-block;
+}
+
 .home__img {
   margin-bottom: 1.5rem;
   border-radius: 50%;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from '../../Assets/Images/logo.svg';
+import Logo from '../../Assets/Images/Logo2.svg';
 import './Sidebar.scss';
 
 function Sidebar() {
