@@ -51,7 +51,7 @@ const resumeData = [
     id: 6,
     category: 'experience',
     icon: 'icon-briefcase',
-    year: '2009 - 2013',
+    year: '2021 - 2022',
     title: 'Full-Stack Developer',
     desc: 'Chenvel Services Inc.',
   },
