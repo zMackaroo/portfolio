@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+
 import {
   Sidebar,
   Home,
@@ -9,10 +10,17 @@ import {
   // Pricing,
   Testimonials,
 } from './Constant/';
+import Loading from './Assets/Images/Loading.gif';
 
 function App() {
   return (
-    <Suspense fallback="Loading">
+    <Suspense
+      fallback={
+        <div className="loading">
+          <img src={Loading} alt="" />
+        </div>
+      }
+    >
       <Sidebar />
       <main className="main">
         <Home />

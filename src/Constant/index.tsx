@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import Work1 from '../Assets/Images/work-1.svg';
+import TripBuddy from '../Assets/Images/tripbuddyai.png';
 import Image1 from '../Assets/Images/avatar-1.svg';
 import Image2 from '../Assets/Images/avatar-3.svg';
 
@@ -60,9 +60,10 @@ const resumeData = [
 const portfolioData = [
   {
     id: 1,
-    image: Work1,
-    title: 'Testify - Testimonials Made Easy',
+    image: TripBuddy,
+    title: 'TripBuddyAI',
     category: 'SaaS',
+    link: 'https://tripbuddyai.vercel.app/',
   },
 ];
 

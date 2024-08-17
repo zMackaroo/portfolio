@@ -47,7 +47,7 @@ function Portfolio() {
             </div>
             <span className="work__category">{key.category}</span>
             <h3 className="work__title">{key.title}</h3>
-            <a href="#" className="work__button">
+            <a href={key.link} target="_blank" className="work__button">
               <i className="icon-link work__button-icon"></i>
             </a>
           </div>
