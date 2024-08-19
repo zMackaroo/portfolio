@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import TripBuddy from '../Assets/Images/tripbuddyai.png';
+import TripBuddy from '../Assets/Images/tripbuddy-branding.png';
 import Image1 from '../Assets/Images/avatar-1.svg';
 import Image2 from '../Assets/Images/avatar-3.svg';
 
