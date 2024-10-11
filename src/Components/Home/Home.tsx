@@ -15,7 +15,6 @@ function Home() {
         <a href="#about" className="btn">
           About me
         </a>
-        <ScrollDown />
       </div>
       <Shapes />
     </section>

@@ -1,5 +1,7 @@
 import { lazy } from 'react';
 import TripBuddy from '../Assets/Images/tripbuddy-branding.png';
+import PokeDex from '../Assets/Images/PokeDex.png';
+import SpeedUp from '../Assets/Images/speedup.png';
 import Image1 from '../Assets/Images/avatar-1.svg';
 import Image2 from '../Assets/Images/avatar-3.svg';
 
@@ -62,8 +64,22 @@ const portfolioData = [
     id: 1,
     image: TripBuddy,
     title: 'TripBuddyAI',
-    category: 'SaaS',
+    category: 'ReactJS',
     link: 'https://tripbuddyai.vercel.app/',
+  },
+  {
+    id: 2,
+    image: PokeDex,
+    title: 'PokeDex',
+    category: 'ReactJS',
+    link: 'https://vite-ts-pokedex.vercel.app/',
+  },
+  {
+    id: 3,
+    image: SpeedUp,
+    title: 'SpeedUp Learning',
+    category: 'ReactJS',
+    link: '#',
   },
 ];
 

@@ -33,16 +33,13 @@ function Portfolio() {
         >
           Express
         </span>
-        <span className="work__item" onClick={() => handleFilterItem('SaasS')}>
-          SaaS
-        </span>
       </div>
 
       <div className="work__container grid">
         {item.map((key, id) => (
           <div key={id} className="work__card">
             <div className="work__thumbnail">
-              <img src={key.image} alt="" className="work__img" />
+              <img src={key.image} alt="" className="" height="330px" />
               <div className="work__mask"></div>
             </div>
             <span className="work__category">{key.category}</span>

@@ -21,15 +21,15 @@ function App() {
         </div>
       }
     >
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main className="main">
         <Home />
         <About />
+        <Portfolio />
         <Resume />
         {/* <Services /> */}
-        <Portfolio />
         {/* <Pricing /> */}
-        <Testimonials />
+        {/* <Testimonials /> */}
       </main>
     </Suspense>
   );

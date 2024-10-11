@@ -19,7 +19,7 @@ function About() {
               ReactJS and NodeJS. Strong engineering professional with
               Bachelor’s degree in Information Technology.
             </p>
-            <a href="" className="btn">
+            <a href="https://drive.google.com/file/d/1_fENS62AFhJGLJk6MJ9ik6CQCgjbcdJ0/view?usp=sharing" target="_blank" className="btn">
               Download CV
             </a>
           </div>

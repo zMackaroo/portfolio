@@ -48,9 +48,9 @@ function Sidebar() {
           </div>
         </nav>
 
-        <div className="nav__footer">
-          <span className="copyright">@copyright 2024</span>
-        </div>
+          <div className="nav__footer">
+            <span className="copyright">@copyright 2024</span>
+          </div>
       </aside>
 
       <div
