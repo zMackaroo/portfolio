@@ -1,14 +1,14 @@
 import { Suspense } from 'react';
 
 import {
-  Sidebar,
+  // Sidebar,
   Home,
   About,
   Portfolio,
   Resume,
   // Services,
   // Pricing,
-  Testimonials,
+  // Testimonials,
 } from './Constant/';
 import Loading from './Assets/Images/Loading.gif';
 
