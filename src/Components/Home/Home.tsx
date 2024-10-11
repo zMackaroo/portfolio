@@ -1,6 +1,5 @@
 import Me from '../../Assets/Images/Profile.jpg';
 import HeaderSocial from './HeaderSocial';
-import ScrollDown from './ScrollDown';
 import Shapes from './Shapes';
 import './Home.scss';
 
