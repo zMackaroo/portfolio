@@ -79,7 +79,7 @@ const portfolioData = [
     image: SpeedUp,
     title: 'SpeedUp Learning',
     category: 'ReactJS',
-    link: '#',
+    link: 'https://www.figma.com/design/Eg340D0vFZH1woQ9p6FBdX/SpeedUpLearning?node-id=1-44&node-type=frame&t=fAfb2FNjKTKfN7QG-0',
   },
 ];
 
