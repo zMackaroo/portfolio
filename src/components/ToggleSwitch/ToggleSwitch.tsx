@@ -108,7 +108,7 @@ function ToggleSwitch({ onToggle, initialState = false }: ToggleSwitchProps) {
     createElegantThemeTransition(!isOn);
   };
 
-  const handleToggle = (event: React.MouseEvent) => {
+  const handleToggle = () => {
     createModernTransition();
     const newState = !isOn;
     setIsOn(newState);
