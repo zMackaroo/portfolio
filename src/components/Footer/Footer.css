@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.688rem 5.125rem;
+
+  > h1 {
+    font-family: "Manrope";
+    font-weight: 900;
+    font-size: 30px;
+  }
+
+  > p {
+    font-family: "Manrope";
+    font-weight: 200;
+    font-size: 14px;
+  }
+
+  > p > span {
+    font-family: "Manrope";
+    font-weight: 900;
+    font-size: 14px;
+  }
+}

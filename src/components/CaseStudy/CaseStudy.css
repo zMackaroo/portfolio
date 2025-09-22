@@ -1,0 +1,64 @@
+.case-study {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 5.75rem 0 5.75rem 3.8rem;
+  gap: 2rem;
+  height: fit-content;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.case-study-title {
+  overflow: hidden;
+  text-wrap: wrap;
+
+  > h1 {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(-180deg);
+    font-family: "Manrope";
+    font-weight: 900;
+    font-size: 1.25rem;
+  }
+}
+
+.case-study-works {
+  display: flex;
+  gap: 3rem;
+  flex: 1;
+  overflow-x: auto;
+  text-wrap: nowrap;
+}
+
+.case-study-works-item {
+  min-width: 14rem;
+  max-width: 14rem;
+  min-height: 15rem;
+  max-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+
+  > h1 {
+    font-family: "Manrope";
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
+
+.case-study-works-item-image {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+
+  > img {
+    width: 50%;
+    height: 50%;
+  }
+}

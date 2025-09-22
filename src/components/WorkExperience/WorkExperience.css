@@ -1,0 +1,498 @@
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  padding: 5.75rem 3.8rem 5.75rem 3.8rem;
+  gap: 5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.work-experience-title {
+  font-family: "Manrope";
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  > span {
+    border-bottom: 5px solid #000;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.work-experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--text-color),
+    var(--text-secondary),
+    var(--text-color)
+  );
+  transform: translateX(-50%);
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Content */
+.timeline-content {
+  width: calc(50% - 2rem);
+  z-index: 2;
+}
+
+.timeline-left .timeline-content {
+  padding-right: 2rem;
+  text-align: right;
+  margin-right: auto;
+}
+
+.timeline-left .timeline-technologies {
+  text-align: right;
+}
+
+.timeline-left .tech-tags {
+  justify-content: flex-end;
+}
+
+.timeline-left .timeline-achievements {
+  text-align: right;
+}
+
+.timeline-left .timeline-achievements ul {
+  text-align: right;
+}
+
+.timeline-left .timeline-achievements li {
+  text-align: right;
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+.timeline-left .timeline-achievements li::before {
+  right: 0;
+  left: auto;
+}
+
+.timeline-right .timeline-content {
+  padding-left: 2rem;
+  text-align: left;
+  margin-left: auto;
+}
+
+/* Timeline Cards */
+.timeline-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 0;
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  transform: translateY(-50%);
+}
+
+.timeline-left .timeline-card::before {
+  right: -30px;
+  border-left-color: var(--card-bg);
+}
+
+.timeline-right .timeline-card::before {
+  left: -30px;
+  border-right-color: var(--card-bg);
+}
+
+/* Card Header */
+.timeline-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.timeline-company {
+  font-family: "Manrope";
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-position {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.timeline-description {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Card Body */
+.timeline-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-technologies h5,
+.timeline-achievements h5 {
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.timeline-achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-achievements li {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline-achievements li::before {
+  content: "•";
+  color: var(--text-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Timeline Marker */
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-left .timeline-marker {
+  flex-direction: row-reverse;
+}
+
+.timeline-right .timeline-marker {
+  flex-direction: row;
+}
+
+.timeline-date {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-color);
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+  position: relative;
+}
+
+.timeline-left .timeline-date {
+  margin-left: 15rem;
+}
+
+.timeline-right .timeline-date {
+  margin-right: 15rem;
+}
+
+.timeline-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--text-color);
+  border: 4px solid var(--bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--text-color);
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-item:hover .timeline-circle {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 0 2px var(--text-color), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .work-experience {
+    padding: 5.75rem 1rem 5.75rem 1rem;
+  }
+
+  .timeline::before {
+    left: 2rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 4rem;
+  }
+
+  .timeline-left .timeline-content,
+  .timeline-right .timeline-content {
+    padding: 0;
+    text-align: left;
+    width: calc(100% - 1rem);
+    margin: 0;
+  }
+
+  .timeline-marker {
+    left: 2rem;
+    transform: translateX(0);
+    flex-direction: row;
+    width: auto;
+    min-width: fit-content;
+    align-items: center;
+  }
+
+  .timeline-left .timeline-date,
+  .timeline-right .timeline-date {
+    margin-left: 15px;
+    margin-right: 0;
+    white-space: nowrap;
+    overflow: visible;
+    max-width: none;
+  }
+
+  .timeline-left .timeline-technologies,
+  .timeline-left .timeline-achievements {
+    text-align: left;
+  }
+
+  .timeline-left .tech-tags {
+    justify-content: flex-start;
+  }
+
+  .timeline-left .timeline-achievements ul {
+    text-align: left;
+  }
+
+  .timeline-left .timeline-achievements li {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
+  .timeline-left .timeline-achievements li::before {
+    left: 0;
+    right: auto;
+  }
+
+  .timeline-card::before {
+    display: none;
+  }
+
+  .timeline-card {
+    margin-left: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .work-experience {
+    padding: 5.75rem 2rem 5.75rem 2rem;
+  }
+
+  .timeline-left .timeline-date {
+    margin-left: 5rem;
+  }
+
+  .timeline-right .timeline-date {
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-experience {
+    padding: 3rem 1rem;
+  }
+
+  .work-experience-title {
+    font-size: 24px;
+  }
+
+  .timeline-company {
+    font-size: 20px;
+  }
+
+  .timeline-position {
+    font-size: 16px;
+  }
+
+  .timeline-card {
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-marker {
+    left: 1.5rem;
+    transform: translateX(0);
+  }
+
+  .timeline-date {
+    font-size: 11px;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+    overflow: visible;
+    max-width: none;
+  }
+
+  .tech-tag {
+    font-size: 11px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .timeline-achievements li {
+    font-size: 12px;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .timeline-card::before {
+  border-left-color: var(--card-bg);
+  border-right-color: var(--card-bg);
+}
+
+[data-theme="dark"] .timeline-circle {
+  background-color: var(--text-color);
+  border-color: var(--bg-color);
+  box-shadow: 0 0 0 2px var(--text-color);
+}
+
+/* Animation for timeline items */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .timeline-card:hover {
+    transform: none;
+  }
+
+  .timeline-item:hover .timeline-circle {
+    transform: none;
+  }
+}

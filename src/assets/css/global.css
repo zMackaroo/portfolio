@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=DotGothic16&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  /* Light mode variables */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-secondary: #666666;
+  --border-color: #e7e7e7;
+  --card-bg: #ffffff;
+  --hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  /* Dark mode variables */
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #333333;
+  --card-bg: #2a2a2a;
+  --hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Advanced smooth scrolling system */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+
+  /* Performance optimizations */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Enhanced smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+/* ======= GLITCH-FREE THEME TRANSITION SYSTEM ======= */
+
+/* Prevent flash during transition */
+body.theme-transitioning {
+  overflow: hidden;
+}
+
+/* Ultra-smooth element morphing */
+.theme-morphing {
+  transition: background-color 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      !important,
+    color 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important,
+    border-color 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important,
+    box-shadow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transform-origin: center;
+  will-change: background-color, color, border-color, box-shadow;
+}
+
+/* Optimized universal transitions */
+*:not(.theme-transition-overlay):not(.fullscreen-ripple):not(.theme-morphing) {
+  transition: background-color 0.2s ease-out, color 0.2s ease-out,
+    border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Ensure overlay is always on top */
+.theme-transition-overlay {
+  position: fixed !important;
+  z-index: 10000 !important;
+  will-change: opacity;
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  .personal-projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-tech-skills {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 1220px) {
+  .about-me-tech-skills {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1010px) {
+  .about-me-header {
+    flex-direction: column;
+  }
+
+  .about-me-header-skills {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-me-tech-skills {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-projects {
+    padding: 5.75rem 1rem 5.75rem 1rem;
+  }
+
+  .personal-projects-item-image {
+    min-width: 20%;
+  }
+
+  .personal-projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-header {
+    padding: 0;
+  }
+
+  .about-me-header-skills,
+  .about-me-tech-skills {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding: 2.688rem 1.5rem;
+  }
+
+  .hero-content-typing {
+    > span {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+  .case-study {
+    padding: 5.75rem 0 5.75rem 0rem;
+  }
+
+  .about-me-header {
+    text-align: justify;
+  }
+
+  .personal-projects-item {
+    flex-direction: column;
+  }
+
+  .personal-projects-item-image {
+    width: auto;
+    height: 250px;
+  }
+
+  .about-me {
+    padding: 5.75rem 1.5rem 5.75rem 1.5rem;
+  }
+
+  .about-me-tech-skills,
+  .about-me-header-skills {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+/* ======= CLEAN MODERN DESIGN SYSTEM ======= */
+
+/* Buttery smooth micro-interactions */
+@keyframes elegant-morph {
+  0% {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.005) translateZ(0);
+    opacity: 0.98;
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to morphing elements */
+.theme-morphing {
+  animation: elegant-morph 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .theme-morphing {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .theme-transition-overlay {
+    transition: none !important;
+  }
+
+  *:not(.theme-transition-overlay):not(.fullscreen-ripple):not(
+      .theme-morphing
+    ) {
+    transition: none !important;
+  }
+}
+
+/* ======= ADVANCED SCROLL PERFORMANCE SYSTEM ======= */
+
+/* Smooth scroll sections */
+section,
+div {
+  scroll-margin-top: 2rem;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 4px;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-color) var(--bg-color);
+}
+
+/* Performance optimizations for smooth scrolling */
+.hero,
+.about-me,
+.personal-projects,
+.case-study {
+  contain: layout style paint;
+  will-change: transform;
+}
