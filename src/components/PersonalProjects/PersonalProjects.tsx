@@ -3,6 +3,7 @@ import worksSplitly from "../../assets/works/splitly.png";
 import worksTripBuddy from "../../assets/works/tripbuddy.png";
 import worksUrbanvogue from "../../assets/works/urbanvogue.png";
 import worksCuteKnights from "../../assets/works/cuteknights.png";
+import worksAdoptPet from "../../assets/works/adopt-pet.jpeg";
 
 function PersonalProjects() {
   return (
@@ -44,6 +45,42 @@ function PersonalProjects() {
           <div
             className="personal-projects-item-image"
             onClick={() =>
+              window.open("https://adopt-pet-eight.vercel.app/", "_blank")
+            }
+          >
+            <img src={worksAdoptPet} alt="works-adoptpet" />
+          </div>
+          <div className="personal-projects-item-description">
+            <div className="personal-projects-item-description-title">
+              <h1>Adopt Pet</h1>
+              <h2>Pet Adoption Website</h2>
+            </div>
+            <p>
+              Adopt Pet is a pet adoption website designed to help people find
+              their perfect pet. It provides a list of pets available for
+              adoption, and allows users to filter pets by breed, age, and
+              gender. It also provides a way to contact the shelter that is
+              hosting the pet.
+            </p>
+            <div className="personal-projects-item-technologies">
+              <p>ReactJS</p>
+              <p>TypeScript</p>
+              <p>CSS</p>
+              <p>Vercel</p>
+            </div>
+            <button
+              onClick={() =>
+                window.open("https://adopt-pet-eight.vercel.app/", "_blank")
+              }
+            >
+              View Website
+            </button>
+          </div>
+        </div>
+        <div className="personal-projects-item">
+          <div
+            className="personal-projects-item-image"
+            onClick={() =>
               window.open("https://tripbuddyai.vercel.app/", "_blank")
             }
           >
@@ -73,7 +110,13 @@ function PersonalProjects() {
               <p>MongoDB</p>
               <p>Vercel</p>
             </div>
-            <button>View Website</button>
+            <button
+              onClick={() =>
+                window.open("https://tripbuddyai.vercel.app/", "_blank")
+              }
+            >
+              View Website
+            </button>
           </div>
         </div>
         <div className="personal-projects-item">
@@ -107,7 +150,11 @@ function PersonalProjects() {
               <p>MongoDB</p>
               <p>Vercel</p>
             </div>
-            <button>View Website</button>
+            <button
+              onClick={() => window.open("https://urbanvogue.asia/", "_blank")}
+            >
+              View Website
+            </button>
           </div>
         </div>
         <div className="personal-projects-item">
@@ -141,7 +188,16 @@ function PersonalProjects() {
               <p>ExpressJS</p>
               <p>Polygon</p>
             </div>
-            <button>View Website</button>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://opensea.io/collection/cute-knights",
+                  "_blank"
+                )
+              }
+            >
+              View Website
+            </button>
           </div>
         </div>
       </div>
