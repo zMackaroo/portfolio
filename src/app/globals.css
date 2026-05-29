@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  --color-bg: #0d0b1e;
+  --color-bg-elevated: #130d2e;
+  --color-bg-card: #1a1333;
+  --color-border: #2a1f4a;
+  --color-purple: #7c3aed;
+  --color-purple-light: #9d5cf6;
+  --color-accent: #c084fc;
+  --color-accent-text: #c084fc;
+  --color-text: #e2d9f3;
+  --color-text-muted: #8b7fb0;
+  --color-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  overflow-x: clip;
+  background-color: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: clip;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 0.5s step-end infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skills-orbit {
+  perspective: 1000px;
+}
+
+.orbit-ring-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+}
+
+.orbit-ring-sm {
+  width: 270px;
+  height: 270px;
+  margin: -135px 0 0 -135px;
+}
+
+.orbit-ring-md {
+  width: 390px;
+  height: 390px;
+  margin: -195px 0 0 -195px;
+}
+
+.orbit-ring-lg {
+  width: 510px;
+  height: 510px;
+  margin: -255px 0 0 -255px;
+}
+
+.orbit-tilt-1 {
+  transform: rotate(15deg) rotateX(65deg);
+}
+
+.orbit-tilt-2 {
+  transform: rotate(-10deg) rotateX(70deg);
+}
+
+.orbit-tilt-3 {
+  transform: rotate(25deg) rotateX(75deg);
+}
+
+.orbit-ring-track {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  border-radius: 50%;
+  transform-origin: center center;
+  will-change: transform;
+  animation: orbit 8s linear infinite;
+}
+
+.orbit-duration-8 {
+  animation-duration: 8s;
+}
+
+.orbit-duration-12 {
+  animation-duration: 12s;
+}
+
+.orbit-duration-18 {
+  animation-duration: 18s;
+}
+
+.orbit-reverse {
+  animation-direction: reverse;
+}
+
+.orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -16px 0 0 -16px;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  background-color: color-mix(in srgb, var(--color-bg-card) 35%, transparent);
+}
+
+.orbit-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  height: 420px;
+  width: 420px;
+  transform: translate(-50%, -42%);
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-purple) 28%, transparent) 0%,
+    color-mix(in srgb, var(--color-purple) 8%, transparent) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  height: 112px;
+  width: 112px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-purple) 55%, transparent) 0%,
+    color-mix(in srgb, var(--color-purple) 25%, transparent) 55%,
+    transparent 78%
+  );
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 60px color-mix(in srgb, var(--color-purple) 35%, transparent),
+    0 0 120px color-mix(in srgb, var(--color-purple) 15%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+  }
+
+  .orbit-ring-track {
+    animation: none;
+  }
+}
