@@ -7,11 +7,11 @@ import {
   type Variants,
 } from "framer-motion";
 import type { ComponentPropsWithoutRef } from "react";
+import { usePreferStaticMotion } from "@/hooks/usePreferStaticMotion";
 
 const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 24 },
   visible: {
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
@@ -21,8 +21,9 @@ type AnimatedSectionProps = ComponentPropsWithoutRef<"section">;
 
 export function AnimatedSection({ children, ...props }: AnimatedSectionProps) {
   const prefersReducedMotion = useReducedMotion();
+  const preferStatic = usePreferStaticMotion();
 
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || preferStatic) {
     return <section {...props}>{children}</section>;
   }
 
@@ -32,7 +33,7 @@ export function AnimatedSection({ children, ...props }: AnimatedSectionProps) {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.08 }}
       variants={sectionVariants}
       {...motionProps}
     >

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { workExperience } from "@/data/work-experience";
+import { usePreferStaticMotion } from "@/hooks/usePreferStaticMotion";
 
 type WorkExperienceBackdropProps = {
   sectionRef: React.RefObject<HTMLElement | null>;
@@ -17,33 +18,13 @@ export function WorkExperienceBackdrop({
     null,
   );
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mobileMq = window.matchMedia("(max-width: 767px)");
-    const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const syncMobile = () => setIsMobile(mobileMq.matches);
-    const syncMotion = () => setReducedMotion(motionMq.matches);
-
-    syncMobile();
-    syncMotion();
-
-    mobileMq.addEventListener("change", syncMobile);
-    motionMq.addEventListener("change", syncMotion);
-
-    return () => {
-      mobileMq.removeEventListener("change", syncMobile);
-      motionMq.removeEventListener("change", syncMotion);
-    };
-  }, []);
+  const preferStatic = usePreferStaticMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const section = sectionRef.current;
 
-    if (!canvas || !section) return;
+    if (!canvas || !section || preferStatic) return;
 
     let cancelled = false;
     let sectionObserver: IntersectionObserver | null = null;
@@ -53,10 +34,14 @@ export function WorkExperienceBackdrop({
       const { TimelineScene } = await import("@/components/three/TimelineScene");
       if (cancelled || !canvasRef.current) return;
 
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
       const scene = new TimelineScene({
         canvas: canvasRef.current,
         entryCount: workExperience.length,
-        isMobile,
+        isMobile: false,
         reducedMotion,
       });
       sceneRef.current = scene;
@@ -121,7 +106,11 @@ export function WorkExperienceBackdrop({
       sceneRef.current?.destroy();
       sceneRef.current = null;
     };
-  }, [sectionRef, entryRefs, isMobile, reducedMotion]);
+  }, [sectionRef, entryRefs, preferStatic]);
+
+  if (preferStatic) {
+    return null;
+  }
 
   return (
     <div

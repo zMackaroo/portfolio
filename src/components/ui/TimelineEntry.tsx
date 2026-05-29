@@ -7,6 +7,7 @@ import {
   formatDateRange,
   type WorkExperience,
 } from "@/data/work-experience";
+import { usePreferStaticMotion } from "@/hooks/usePreferStaticMotion";
 import { cn } from "@/lib/utils";
 
 type TimelineEntryProps = {
@@ -23,17 +24,24 @@ function DateBadge({
   className?: string;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const preferStatic = usePreferStaticMotion();
+
+  const badgeClass = cn(
+    "inline-flex w-fit rounded-full border border-border bg-bg-card px-3 py-1 text-xs text-text-muted",
+    className,
+  );
+
+  if (prefersReducedMotion || preferStatic) {
+    return <p className={badgeClass}>{formatDateRange(entry.startDate, entry.endDate)}</p>;
+  }
 
   return (
     <motion.p
-      initial={prefersReducedMotion ? false : { opacity: 0 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1 }}
-      viewport={{ once: true, amount: 0.25 }}
+      initial={{ opacity: 0.6 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.08 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={cn(
-        "inline-flex w-fit rounded-full border border-border bg-bg-card px-3 py-1 text-xs text-text-muted",
-        className,
-      )}
+      className={badgeClass}
     >
       {formatDateRange(entry.startDate, entry.endDate)}
     </motion.p>

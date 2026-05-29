@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { usePreferStaticMotion } from "@/hooks/usePreferStaticMotion";
 import { cn } from "@/lib/utils";
 
 type TimelineDotProps = {
@@ -10,6 +11,11 @@ type TimelineDotProps = {
 
 export function TimelineDot({ cardSide, className }: TimelineDotProps) {
   const prefersReducedMotion = useReducedMotion();
+  const preferStatic = usePreferStaticMotion();
+
+  const dot = (
+    <span className="relative block size-3 rounded-full bg-purple" />
+  );
 
   return (
     <div
@@ -18,24 +24,24 @@ export function TimelineDot({ cardSide, className }: TimelineDotProps) {
         className,
       )}
     >
-      <motion.span
-        initial={prefersReducedMotion ? false : { scale: 0 }}
-        whileInView={
-          prefersReducedMotion
-            ? undefined
-            : {
-                scale: [0, 1, 1.5, 1],
-              }
-        }
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.15,
-          times: [0, 0.45, 0.75, 1],
-          ease: "easeOut",
-        }}
-        className="relative block size-3 rounded-full bg-purple"
-      />
+      {prefersReducedMotion || preferStatic ? (
+        dot
+      ) : (
+        <motion.span
+          initial={{ scale: 1 }}
+          whileInView={{
+            scale: [1, 1.5, 1],
+          }}
+          viewport={{ once: true, amount: 0.08 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.15,
+            times: [0, 0.5, 1],
+            ease: "easeOut",
+          }}
+          className="relative block size-3 rounded-full bg-purple"
+        />
+      )}
 
       <span
         aria-hidden="true"

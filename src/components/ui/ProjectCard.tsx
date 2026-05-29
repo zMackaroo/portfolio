@@ -74,7 +74,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           width={project.imageWidth}
           height={project.imageHeight}
           sizes="(max-width: 1024px) 100vw, 583px"
-          className=" w-full rounded-2xl object-cover h-[341px]"
+          className="h-auto w-full rounded-2xl object-cover"
         />
       </div>
 
