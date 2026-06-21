@@ -11,6 +11,40 @@ export type ProjectItem = {
 
 export const projects: ProjectItem[] = [
   {
+    id: "battle-arena",
+    title: "Battle Arena",
+    description:
+      "I built a real-time TikTok LIVE battle overlay where viewers actually fight on stream.",
+    image: "/assets/projects/battle-arena.jpeg",
+    imageWidth: 583,
+    imageHeight: 341,
+    githubUrl:
+      "https://github.com/zMackaroo/tiktok-live-battle-arena-portfolio",
+    liveUrl: "https://zmackaroo.github.io/tiktok-live-battle-arena-portfolio/",
+  },
+  {
+    id: "ekart",
+    title: "Karti - Checklist",
+    description:
+      "Karti - Checklist is a platform that allows users to create and manage checklists for their projects. It is a platform that allows users to create and manage checklists for their projects. It is a platform that allows users to create and manage checklists for their projects.",
+    image: "/assets/projects/ekart.jpeg",
+    imageWidth: 583,
+    imageHeight: 341,
+    githubUrl: "https://github.com/zMackaroo/e-kart-portfolio",
+    liveUrl: "https://zmackaroo.github.io/e-kart-portfolio/",
+  },
+  {
+    id: "tech-reviewer",
+    title: "Tech Reviewer",
+    description:
+      "Tech Reviewer is a platform that allows users to review and rate technology products and services. It is a platform that allows users to review and rate technology products and services. It is a platform that allows users to review and rate technology products and services.",
+    image: "/assets/projects/techreviewer.jpeg",
+    imageWidth: 583,
+    imageHeight: 341,
+    githubUrl: "https://github.com/zMackaroo/tech-dev-reviewer",
+    liveUrl: "https://zmackaroo.github.io/tech-dev-reviewer/senior-lead",
+  },
+  {
     id: "exvara tech",
     title: "Exvara Tech",
     description:
@@ -48,7 +82,7 @@ export const projects: ProjectItem[] = [
     title: "TripBuddy AI",
     description:
       "TripBuddy – AI Travel Itinerary Creator An AI-powered travel planner that generates personalized, day-by-day itineraries based on user preferences, destinations, and schedules. It helps users easily organize trips by suggesting optimized routes, activities, and travel plans in one seamless experience.",
-    image: "/assets/projects/project-2.png",
+    image: "/assets/projects/tripbuddy.png",
     imageWidth: 583,
     imageHeight: 341,
     githubUrl: "https://github.com/zMackaroo/tripbuddy",
