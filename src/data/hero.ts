@@ -1,24 +1,15 @@
 export const heroContent = {
-  speechBubble: "Hello! I Am Sydney D. Enciso",
-  headline: {
-    line1: "A Software Engineer who",
-    line2: "builds seemless",
-    line3Prefix: "digital",
-    line3Highlight: "experiences",
-    line3Suffix: "...",
-  },
+  kicker: "Software Engineer · Filmmaker · Storyteller",
+  nameLine1: "Sydney",
+  nameLine2Before: "D. ",
+  nameLine2Accent: "Enciso",
   subTagline:
-    "Because great technology is not just how it looks, but how seamlessly it works.",
+    "I engineer seamless digital experiences by day and frame stories through a lens by heart — montages, vlogs, and short films where code and cinema meet.",
+  scrollCue: "SCROLL TO PLAY",
   avatar: {
-    src: "/assets/Me.png",
-    alt: "Sydney D. Enciso memoji avatar holding a MacBook",
-    width: 516,
-    height: 518,
-  },
-  gradient: {
-    src: "/assets/Gradient.png",
-    alt: "",
-    width: 642,
-    height: 720,
+    src: "/assets/portrait.jpg",
+    alt: "Sydney D. Enciso in a cinematic portrait at a monumental plaza",
+    width: 1024,
+    height: 1024,
   },
 } as const;

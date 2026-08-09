@@ -6,19 +6,20 @@ export type SocialLinkItem = {
 };
 
 export const contactContent = {
-  heading: "Contact",
+  sceneTag: "Scene 008 — Fade In",
+  headingBefore: "Let's create",
+  headingLine2: "something ",
+  headingAccent: "worth",
+  headingLine3: "watching.",
   intro:
-    "I'm seeking to join a cross-functional team focused on building accessible, user-centered products that create meaningful impact in people’s everyday lives, or have a project in mind? Let's connect.",
+    "I'm seeking to join a cross-functional team focused on building accessible, user-centered products that create meaningful impact — or have a film/project in mind? Let's connect.",
   email: "sydenciso.work@gmail.com",
+  footerLeft: "© 2026 SYDNEY D. ENCISO",
+  footerCenter: "SHOT & BUILT WITH INTENT",
+  filmCredit: "A FILM BY SYDNEY D. ENCISO",
 } as const;
 
 export const socialLinks: SocialLinkItem[] = [
-  // {
-  //   id: "instagram",
-  //   name: "Instagram",
-  //   href: "https://www.instagram.com",
-  //   iconKey: "instagram",
-  // },
   {
     id: "github",
     name: "GitHub",
@@ -27,7 +28,7 @@ export const socialLinks: SocialLinkItem[] = [
   },
   {
     id: "google",
-    name: "Google",
+    name: "Email",
     href: "mailto:sydenciso.work@gmail.com",
     iconKey: "google",
   },

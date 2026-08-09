@@ -2,13 +2,14 @@ import { aboutContent } from "@/data/about";
 import { contactContent, socialLinks } from "@/data/contact";
 import { heroContent } from "@/data/hero";
 
-const name = heroContent.speechBubble.replace(/^Hello! I Am /, "");
+const name = "Sydney D. Enciso";
 
 export const siteConfig = {
   name,
-  title: `${name} | UI/UX Designer & Software Engineer`,
+  brand: "Sydney",
+  title: `${name} | Engineer & Filmmaker`,
   shortTitle: `${name} | Portfolio`,
-  description: aboutContent.body,
+  description: aboutContent.lead,
   jobTitle: aboutContent.currentRole,
   email: contactContent.email,
   ogImage: heroContent.avatar.src,
@@ -17,12 +18,13 @@ export const siteConfig = {
   ogImageHeight: heroContent.avatar.height,
   keywords: [
     name,
-    "UI/UX designer",
     "software engineer",
+    "filmmaker",
     "frontend developer",
     "portfolio",
-    "web design",
-    "accessible design",
+    "montage",
+    "vlogs",
+    "storyteller",
     ...aboutContent.roles.map((role) => role.replace(/\.$/, "")),
   ],
   socialLinks,

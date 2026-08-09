@@ -17,15 +17,21 @@ const config: Config = {
         accent: {
           DEFAULT: "var(--color-accent)",
           text: "var(--color-accent-text)",
+          soft: "var(--color-accent-soft)",
         },
         text: {
           DEFAULT: "var(--color-text)",
           muted: "var(--color-text-muted)",
+          faint: "var(--color-faint)",
         },
         white: "var(--color-white)",
+        line: "var(--color-line)",
+        rec: "var(--color-rec)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
       },
     },
   },

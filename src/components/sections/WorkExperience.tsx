@@ -1,14 +1,36 @@
-import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { WorkExperienceContent } from "@/components/sections/WorkExperienceContent";
+import {
+  workExperience,
+  workExperienceContent,
+} from "@/data/work-experience";
 
 export function WorkExperience() {
   return (
-    <AnimatedSection
-      id="work-experience"
-      aria-label="Work Experience"
-      className="relative w-full overflow-x-clip bg-bg py-24"
-    >
-      <WorkExperienceContent />
-    </AnimatedSection>
+    <section id="work-experience" className="credits" data-scene="006">
+      <div className="wrap">
+        <div className="scene-tag reveal">{workExperienceContent.sceneTag}</div>
+        <h2 className="serif-heading reveal" style={{ marginBottom: 50 }}>
+          {workExperienceContent.heading}
+        </h2>
+        <div>
+          {workExperience.map((job) => (
+            <div key={job.id} className="credit-row reveal">
+              <div className="year">{job.yearLabel}</div>
+              <div>
+                <div className="role">
+                  {job.role}
+                  <em>{job.company}</em>
+                </div>
+                <div className="note">{job.description}</div>
+              </div>
+              <div className="tags">
+                {job.tags?.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

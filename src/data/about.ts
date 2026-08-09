@@ -1,9 +1,23 @@
 export const aboutContent = {
-  roles: ["Software Engineer.", "FullStack Developer.", "Mobile Developer."],
+  sceneTag: "Scene 002 — The Storyteller",
+  frameLabel: "POV — S. ENCISO · 35MM",
+  headingBefore: "Behind every build,",
+  headingAccent: "story",
+  headingAfter: " waiting",
+  headingLine3: "to be framed.",
+  lead: "A software engineer with 7+ years crafting high-performance web and mobile products — and a filmmaker who finds the same rhythm in a well-cut sequence as in clean code.",
+  body: "By profession I build seamless experiences with React, Next.js, and React Native across enterprise and FinTech worlds. Off the clock, I'm editing montages, shooting vlogs, and chasing light — treating every project like a scene: composed, paced, and made to feel effortless.",
+  closing:
+    "Great work, like great film, isn't just how it looks — it's how seamlessly it moves.",
+  stats: [
+    { value: "7+", label: "Years Engineering" },
+    { value: "30+", label: "Products Shipped" },
+    { value: "∞", label: "Stories Filmed" },
+  ],
   currentRole: "Software Engineer",
   company: {
     name: "SNSoft Technology Inc.",
     url: "https://www.snsoft.ph/",
   },
-  body: "Accomplished Software Engineer with 7+ years of experience specializing in building high-performance web and mobile applications. Proven track record in full-stack development, API integrations, and backend services across enterprise and FinTech environments. A technical leader who actively contributes to sprint planning, refinement, and estimations, ensuring alignment between business objectives and technical execution. Highly skilled in ReactJS, NextJS, React Native, and modern frontend ecosystems, with hands-on experience in NodeJS, ExpressJS, Known for delivering seamless, user-friendly solutions while optimizing workflows, improving application performance, mentoring team members, and maintaining high code quality standards.",
+  roles: ["Software Engineer.", "Filmmaker.", "Storyteller."],
 } as const;

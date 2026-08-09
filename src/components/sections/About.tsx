@@ -1,41 +1,48 @@
-import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { TypewriterText } from "@/components/ui/TypewriterText";
+import Image from "next/image";
 import { aboutContent } from "@/data/about";
+import { heroContent } from "@/data/hero";
 
 export function About() {
-  const { roles, currentRole, company, body } = aboutContent;
-
   return (
-    <AnimatedSection
-      id="about"
-      aria-label="About"
-      className="w-full overflow-x-clip bg-bg-elevated py-24"
-    >
-      <div className="mx-auto max-w-[1100px] px-6 lg:px-12">
-        <h2
-          className="w-full max-w-full overflow-x-clip text-4xl font-bold leading-tight text-white lg:text-[44px]"
-          aria-label={`I'm a ${roles.join(" ")}`}
-        >
-          <TypewriterText strings={roles} prefix="I'm a " />
-        </h2>
-
-        <p className="mt-4 text-base text-text-muted lg:text-lg">
-          Currently, I&apos;m a {currentRole} at{" "}
-          <span aria-hidden="true">🔵</span>{" "}
-          <a
-            href={company.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent-text transition-colors hover:text-purple-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
-          >
-            {company.name}
-          </a>
-        </p>
-
-        <p className="mt-8 text-base leading-relaxed text-text-muted lg:text-lg text-justify">
-          {body}
-        </p>
+    <section id="about" className="about-cinematic" data-scene="002">
+      <div className="wrap">
+        <div className="scene-tag reveal">{aboutContent.sceneTag}</div>
+        <div className="about-grid">
+          <div className="about-portrait reveal" data-parallax="-0.06">
+            <div className="about-portrait-frame">
+              <Image
+                src={heroContent.avatar.src}
+                alt={`Portrait of ${heroContent.nameLine1} ${heroContent.nameLine2Before}${heroContent.nameLine2Accent}`}
+                width={heroContent.avatar.width}
+                height={heroContent.avatar.height}
+                className="about-portrait-img"
+              />
+              <span className="about-portrait-grade" aria-hidden />
+            </div>
+            <div className="frame-label">{aboutContent.frameLabel}</div>
+          </div>
+          <div>
+            <h2 className="serif-heading reveal">
+              {aboutContent.headingBefore}
+              <br />a <em>{aboutContent.headingAccent}</em>
+              {aboutContent.headingAfter}
+              <br />
+              {aboutContent.headingLine3}
+            </h2>
+            <p className="lead reveal d1">{aboutContent.lead}</p>
+            <p className="reveal d2">{aboutContent.body}</p>
+            <p className="reveal d2">{aboutContent.closing}</p>
+            <div className="about-meta reveal d3">
+              {aboutContent.stats.map((stat) => (
+                <div key={stat.label} className="stat">
+                  <div className="num">{stat.value}</div>
+                  <div className="lbl">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }
